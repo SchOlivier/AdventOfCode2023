@@ -1,7 +1,7 @@
 <?php
-// $path = 'exampleInput-1';
+$path = 'exampleInput-1';
 // $path = 'exampleInput-2';
-$path = 'puzzleInput';
+// $path = 'puzzleInput';
 $file = fopen($path, 'r');
 
 $sumPartOne = 0;
