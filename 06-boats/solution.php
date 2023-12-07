@@ -18,22 +18,6 @@ foreach ($times as $i => $time) {
     ];
 }
 
-/**
- * d: distance parcourue
- * t: temps d'appui du bouton
- * T: Temps total disponible
- * D: record de distance
- * 
- * d = t(T-t)
- * 
- * On veut d > D, soit :
- * t(T-t)>D, soit :
- * t^2 - tT + D < 0
- * 
- * avec Δ = T^2 -4D
- * On veut :
- * (T - √Δ)/2 < t < (T + √Δ)/2
- */
 $product = 1;
 foreach ($records as $i => $record) {
     echo "Record $i, time: " . $record['time'] . ", distance: " . $record['distance'] . "\n";
@@ -54,6 +38,22 @@ echo "Part 2 - $nbSolutions possible solutions\n";
 
 function getNumberOfSolutionsForRecord(array $record): int
 {
+    /**
+ * d: distance parcourue
+ * t: temps d'appui du bouton
+ * T: Temps total disponible
+ * D: record de distance
+ * 
+ * d = t(T-t)
+ * 
+ * On veut d > D, soit :
+ * t(T-t)>D, soit :
+ * t^2 - tT + D < 0
+ * 
+ * avec Δ = T^2 -4D
+ * On veut :
+ * (T - √Δ)/2 < t < (T + √Δ)/2
+ */
     $delta = $record['time'] ** 2 - 4 * $record['distance'];
     $tMin = ($record['time'] - sqrt($delta)) / 2;
     $tMax = ($record['time'] + sqrt($delta)) / 2;
