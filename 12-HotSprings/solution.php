@@ -6,7 +6,6 @@ $file = fopen($path, 'r');
 
 $total = 0;
 $totalPart2 = 0;
-$memo = [];
 
 
 while ($line = trim(fgets($file))) {
@@ -31,6 +30,7 @@ while ($line = trim(fgets($file))) {
 
     $groupsPart2 = array_merge($groups, $groups, $groups, $groups, $groups);
 
+    $memo = [];
     $totalPart2 += countArrangements($springsPart2, $groupsPart2, 0);
 }
 
