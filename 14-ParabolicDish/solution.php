@@ -44,46 +44,13 @@ foreach ($cache as $value) {
 }
 echo "Weight part 2 (maybe) : $weight\n";
 
-
-// $weight = getWeight($map, $height, $width);
-// echo "\nWeight part 2 : $weight\n";
-
-// $nextCycleMap = doCycle($map, $height, $width);
-// echo "\n---------------\nAfter cycle:\n";
-// displayMap($nextCycleMap, $height, $width);
-// while ($nextCycleMap != $map) {
-//     $map = $nextCycleMap;
-//     $nextCycleMap = doCycle($map, $height, $width);
-//     echo "\n---------------\nAfter cycle:\n";
-//     displayMap($nextCycleMap, $height, $width);
-//     $a = readline("continue?");
-//     if ($a == 'n') die();
-// }
-// $weight = getWeight($mapPart1, $height, $width);
-// echo "Weight part 2 : $weight\n";
-
-
 function doCycle(array $map, int $height, int $width): array
 {
-    // echo "\n---------------\nStarting cycle with:\n";
-    // displayMap($map, $height, $width);
-
     $map = moveNorth($map, $height, $width);
-    // echo "\n---North:\n";
-    // displayMap($map, $height, $width);
-
     $map = moveWest($map, $height, $width);
-    // echo "\n---West:\n";
-    // displayMap($map, $height, $width);
-
     $map = moveSouth($map, $height, $width);
-    // echo "\n---South:\n";
-    // displayMap($map, $height, $width);
-
     $map = moveEast($map, $height, $width);
-    // echo "\n---East:\n";
-    // displayMap($map, $height, $width);
-
+    
     return $map;
 }
 
